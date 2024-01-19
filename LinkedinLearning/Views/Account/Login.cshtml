@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model LinkedinLearning.Models.LoginViewModel;
+@{
+    ViewData["Title"] = "Login";
+}
+<h2>Login</h2>
+
+<form asp-controller="Account" asp-action="Subscription" method="post">
+    @Html.AntiForgeryToken()@*ajout pour plus de protection*@
+    <div asp-validation-summary="All"></div> @*renvoi les erreurs*@
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+   
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+    </div>
+    <div>
+        <button type="submit">Login</button> @*ajout du bouton submit*@
+    </div>
+
+</form>

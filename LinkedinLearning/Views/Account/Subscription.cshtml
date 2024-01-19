@@ -1,0 +1,33 @@
+﻿@model LinkedinLearning.Models.SubscriptionViewModel;
+@{
+    ViewData["Title"] = "Subscription";
+}
+
+<h1>Subscription/ Inscription</h1>
+<form asp-controller="Account" asp-action="Subscription" method="post">
+    @Html.AntiForgeryToken()@*ajout pour plus de protection*@
+    <div asp-validation-summary="All"></div> @*renvoi les erreurs*@
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
+    </div>
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName"/>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName"/>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password"/>
+    </div>
+    <div>
+        <button type="submit">Subscribe</button> @*ajout du bouton submit*@
+    </div>
+
+
+</form>
+
